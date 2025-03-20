@@ -1,3 +1,13 @@
+/* Ensure the body and html take up the full height of the screen */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Base styles for the entire document */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,6 +16,7 @@ body {
     color: #333;
 }
 
+/* Header styling including layout and background */
 header {
     display: flex;
     flex-direction: column;
@@ -14,42 +25,66 @@ header {
     color: #fff;
     padding: 1rem 2rem;
     text-align: center;
+    position: relative;
+    /* Add relative positioning */
 }
 
+/* Container for the header logos */
 .logo-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
 }
 
-.logo-left,
-.logo-right {
-    height: 60px;
-    /* Adjust as needed */
+/* Wrapper for both images */
+.image-wrapper {
+    display: flex;
+    justify-content: space-between;
+    /* Aligns the images on opposite ends */
+    align-items: center;
+    /* Vertically center them */
+    width: 100%;
 }
 
+/* Left and right logo images */
+.logo-left,
+.logo-right {
+    width: 150px;
+    /* Adjust logo size */
+    max-width: 100%;
+    flex-shrink: 0;
+}
+
+/* Styling for header title text */
 .header-title {
     font-size: 1.5rem;
     font-weight: bold;
-    margin-top: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
 }
 
+/* Navigation container styling */
 nav {
     margin-top: 10px;
 }
 
+/* Reset list styles for navigation */
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
+/* Inline display for navigation menu items */
 nav ul li {
     display: inline;
     margin-right: 15px;
 }
 
+/* Styling for navigation links */
 nav ul li a {
     color: #fff;
     text-decoration: none;
@@ -57,14 +92,19 @@ nav ul li a {
     border-radius: 5px;
 }
 
+/* Hover effect for navigation links */
 nav ul li a:hover {
     background-color: #003366;
 }
 
+/* Main content container styling */
 main {
     padding: 1rem;
+    flex: 1;
+    /* Allow the main content to grow and take up available space */
 }
 
+/* Section headings styling */
 section h2 {
     background-color: #3b5c79;
     color: #fff;
@@ -72,6 +112,7 @@ section h2 {
     border-radius: 5px;
 }
 
+/* Container for info sections with flexible layout */
 .container {
     display: flex;
     gap: 1rem;
@@ -79,9 +120,10 @@ section h2 {
     justify-content: space-between;
 }
 
+/* Styling for school info and network health sections */
 .school-info,
 .network-health {
-    background-color: #fff;
+    background-color: #acacac;
     border: 1px solid #ccc;
     padding: 1rem;
     margin-bottom: 1rem;
@@ -90,6 +132,7 @@ section h2 {
     border-radius: 5px;
 }
 
+/* Headings for school info and network health sections */
 .school-info h3,
 .network-health h3 {
     background-color: #3b5c79;
@@ -99,16 +142,7 @@ section h2 {
     margin-top: 0;
 }
 
-footer {
-    background-color: #3b5c79;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
+/* Styling for the search form container */
 .search-form {
     width: 500px;
     background-color: #fff;
@@ -119,15 +153,18 @@ footer {
     border-radius: 5px;
 }
 
+/* Heading for the search form */
 .search-form h3 {
     margin-top: 0;
 }
 
+/* Label styling within the search form */
 .search-form label {
     display: block;
     margin: 0.5rem 0 0.2rem;
 }
 
+/* Input styling for text and submit elements in the search form */
 .search-form input[type="text"],
 .search-form input[type="submit"] {
     width: 100%;
@@ -137,12 +174,222 @@ footer {
     border-radius: 5px;
 }
 
+/* Styling for the search form submit button */
 .search-form input[type="submit"] {
     background-color: #3b5c79;
     color: #fff;
     cursor: pointer;
 }
 
+/* Hover effect for the search form submit button */
 .search-form input[type="submit"]:hover {
     background-color: #1c2b38;
+}
+
+/* Basic footer styling */
+footer {
+    background-color: #3b5c79;
+    /* Footer background color */
+    color: #ffffff;
+    /* Footer text color */
+    padding: 20px;
+    /* Add padding for spacing */
+    text-align: center;
+    /* Center-align text */
+    border-top: 1px solid #ccc;
+    /* Add a subtle border at the top */
+    font-size: 0.9rem;
+    /* Slightly smaller font size */
+}
+
+footer .color-switcher {
+    margin-bottom: 10px;
+    align-items: center;
+    /* Add spacing below the color switcher */
+}
+
+footer button {
+    margin-top: 10px;
+    /* Add spacing above the button */
+    padding: 8px 12px;
+    /* Add padding to the button */
+    background-color: #466e92;
+    /* Button background color */
+    color: #fff;
+    /* Button text color */
+    border: none;
+    /* Remove border */
+    border-radius: 5px;
+    /* Add rounded corners */
+    cursor: pointer;
+    /* Change cursor to pointer on hover */
+}
+
+footer button:hover {
+    background-color: #2a3f54;
+    /* Darker background on hover */
+}
+
+/* High contrast mode styles */
+body.high-contrast {
+    background-color: #232323;
+    color: #fff172;
+}
+
+body.school-info.high-contrast,
+body.network-health.high-contrast {
+    background-color: #6a6969;
+    color: #fff;
+}
+
+body.high-contrast header,
+body.high-contrast footer {
+    background-color: #2a3f54;
+    color: #fff;
+}
+
+body.high-contrast a {
+    color: #ff0;
+}
+
+body.high-contrast a:hover {
+    background-color: #ff0;
+    color: #000;
+}
+
+/* Colorblind mode styles */
+
+.school-info.colorblind h3,
+.network-health.colorblind h3 {
+    background-color: #FFC20A;
+    color: #000000;
+}
+
+
+body.colorblind {
+    background-color: #ffffff;
+    color: ;
+}
+
+body.colorblind header,
+body.colorblind footer {
+    background-color: #FFC20A;
+    color: #fff;
+}
+
+body.colorblind a {
+    color: #0072ce;
+}
+
+body.colorblind a:hover {
+    background-color: #005bb5;
+    color: #fff;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #7e7e7e;
+    color: #000000;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+    background-color: #535353;
+    color: #ffffff;
+}
+
+body.dark-mode a {
+    color: #bb86fc;
+}
+
+body.dark-mode a:hover {
+    background-color: #3700b3;
+    color: #ffffff;
+}
+
+/* Mobile devices general styling (max-width: 768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .logo-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-left,
+    .logo-right {
+        height: 50px;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .school-info,
+    .network-health {
+        flex: 1 1 100%;
+    }
+
+    footer {
+        position: static;
+        padding: 1rem;
+    }
+
+    .logo-left,
+    .logo-right {
+        width: 100px;
+        /* Adjust logo size for smaller screens */
+    }
+
+    .color-switcher {
+        right: 1rem;
+        /* Adjust position for smaller screens */
+    }
+}
+
+/* Extra small devices styling (max-width: 480px) */
+@media (max-width: 480px) {
+    .header-title {
+        font-size: 1.2rem;
+    }
+
+    nav ul li a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    section h2 {
+        font-size: 1.2rem;
+    }
+
+    .school-info p,
+    .network-health p {
+        font-size: 0.9rem;
+    }
+
+    .logo-left,
+    .logo-right {
+        width: 80px;
+        /* Further adjust logo size for extra small screens */
+    }
+
+    .color-switcher {
+        right: 0.5rem;
+        /* Adjust position for extra small screens */
+    }
 }

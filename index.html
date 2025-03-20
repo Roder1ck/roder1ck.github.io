@@ -7,16 +7,20 @@
     <title>Network Operations Center</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<script src="script.js"></script>
 
 <body>
+    <!-- Added skip link for screen readers -->
+    <a class="skip-link" href="#mainContent"
+        style="position: absolute; top: -40px; left: 0; background: #fff; color: #000; padding: 8px; z-index: 100; transition: top 0.3s;">Skip
+        to main content</a>
+
     <header>
         <div class="logo-container">
             <img src="th-removebg-preview.png" alt="NYC Public Schools Logo" class="logo-left">
             <img src="ditt logo.png" alt="DIIT Logo" class="logo-right">
         </div>
         <h1 class="header-title">Network Operations Center</h1>
-        <nav>
+        <nav aria-label="Primary Navigation">
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -26,11 +30,11 @@
         </nav>
     </header>
 
-    <main>
-        <section id="home">
-            <h2>Network Status Dashboard</h2>
+    <main id="mainContent">
+        <section id="home" aria-labelledby="homeHeading">
+            <h2 id="homeHeading">Network Status Dashboard</h2>
             <div class="container">
-                <div class="school-info">
+                <div class="school-info" aria-label="School Information">
                     <h3>George Westinghouse Career and Technical Education High School</h3>
                     <p><strong>School Address:</strong> 105 TECH PLACE</p>
                     <p><strong>Principal:</strong> Kyleema Norman</p>
@@ -45,7 +49,7 @@
                     <p><strong>Refresh Projects:</strong> CCU Wave 2 - Upgrade Complete (03/01/21)</p>
                     <p><strong>Last Updated:</strong> 02/26/2025 15:17:35</p>
                 </div>
-                <div class="network-health">
+                <div class="network-health" aria-label="Network Health Overview">
                     <h3>At a Glance</h3>
                     <p><strong>Bandwidth:</strong> 4%</p>
                     <p><strong>Network Health:</strong> Normal</p>
@@ -57,9 +61,24 @@
             </div>
         </section>
     </main>
+
     <footer>
-        <p>&copy; 2025 God is love.</p>
+        <div id="cps" class="color-switcher">
+            <label for="colorPalette">Color Palette:</label>
+            <select id="colorPalette">
+                <option value="regular">Regular</option>
+                <option value="high-contrast">High Contrast</option>
+                <option value="colorblind">Colorblind Friendly</option>
+            </select>
+        </div>
+        <p class="footer-copyright">&copy; 2025 God is love.</p>
+        <button id="themeToggle">Switch to Dark Mode</button>
     </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+    </script>
 </body>
 
 </html>
